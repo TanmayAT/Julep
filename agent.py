@@ -6,7 +6,7 @@ from task import task_def
 AGENT_UUID = uuid.uuid4()
 TASK_UUID = uuid.uuid4()
 
-JULEP_API_KEY = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjc0OTJmMi1kNjNmLTVhZjEtOTJiZC05ZTY0M2Y2NzRhOWIiLCJlbWFpbCI6InZhaWRpa3BhbmRleXR0QGdtYWlsLmNvbSIsImlhdCI6MTc1MTQ2MTc1NywiZXhwIjoxNzUyMDY2NTU3fQ.FR-Ln5_dLlZNHsM_0xrjsH8K8e5mkpaa3vre7PssPzK37c-OP-tnSXsYj1QNQYyNvKDdZLutU1KerDFHz0DEkw"
+JULEP_API_KEY = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjc0OTJmMi1kNjNmLTVhZjEtOTJiZC05ZTY0M2Y2NzRhOWIiLCJlbWFpbCI6InZhaWRpa3BhbmRleXR0QGdtYWlsLmNvbSIsImlhdCI6MTc1MTQ2NDgxNiwiZXhwIjoxNzUyMDY5NjE2fQ.qkVJD6GNI1S5W5suAG9tUlxnNq5xCo9oLn7I_FPSnsKmAqGQMZITeBrkgCaVZaXU6bWT3yBmR6HxcQHA4A-LIQ"
 
 client = Client(api_key=JULEP_API_KEY, environment="production")
 
@@ -49,7 +49,6 @@ execution = client.executions.get(execution.id)
 while execution.status != "succeeded":
     time.sleep(5)
     execution = client.executions.get(execution.id)
-    print(execution)
     print(execution.output)
 
 execution = client.executions.get(execution.id)
